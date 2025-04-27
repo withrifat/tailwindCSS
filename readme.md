@@ -1,61 +1,52 @@
-# 🎨 Tailwind CSS Setup with Bun + Vite + Vanilla JS
+🚀 Tips for Installing Tailwind CSS with Bun & Vite (Vanilla JS)
+A quick guide to set up Tailwind CSS using Bun and Vite for a Vanilla JavaScript project.
 
-This guide walks you through setting up **Tailwind CSS** in a **Vanilla JavaScript** project using **Bun** and **Vite**.
-
----
-
-## 🧱 Step 1: Create a New Project
-
-```bash
+⚙️ Step 1: Create Your Project
+bash
+Copy
+Edit
 bun create vite@latest .
-npm i -g bun  # Install Bun globally if not already installed
-✅ When prompted, choose "Vanilla" for the framework.
+npm i -g bun
+When prompted, select "Vanilla" for the framework.
 
 📦 Step 2: Install Dependencies
 bash
-Copy code
+Copy
+Edit
 bun install
 bun run dev
 🎨 Step 3: Install Tailwind CSS
 bash
-Copy code
+Copy
+Edit
 bun add tailwindcss @tailwindcss/vite
-⚙️ Step 4: Configure Vite for Tailwind
-Create a file named vite.config.ts in the root directory and add:
+🛠️ Step 4: Configure Vite
+Create a file named vite.config.ts in the root directory and add the following:
 
 ts
-Copy code
+Copy
+Edit
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [tailwindcss()],
+  plugins: [
+    tailwindcss(),
+  ],
 })
-🛠️ Step 5: Initialize Tailwind Config
-Run the following to generate a tailwind.config.js file:
+💅 Step 5: Set Up Tailwind in CSS
+Inside your css folder:
 
-bash
-Copy code
-bunx tailwindcss init
-Update it to:
+Delete all existing styles.
 
-js
-Copy code
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-💅 Step 6: Set Up CSS
-In your main CSS file (e.g., style.css), clear everything and add:
+Create a new file (e.g., main.css) and add:
 
 css
-Copy code
+Copy
+Edit
 @import "tailwindcss";
-🚀 Step 7: Start the Dev Server
+🧪 Final Step: Run the Project
 bash
-Copy code
+Copy
+Edit
 bun run dev
